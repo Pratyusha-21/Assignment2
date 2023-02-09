@@ -15,6 +15,9 @@ class Mail {
 
     /**
      * Send mail to recipient.
+     * 
+     * @return void 
+     *    no value will be returned.
      */
     function sendMail() {
         if (isset($_POST['send'])) {
@@ -83,8 +86,8 @@ class Mail {
             
             // Checks validation of email.
             if ($validationResult['smtp_check']) {
-                return true;
                 $_SESSION['email'] = $email;
+                return true;
             } 
             else {
                 return FALSE;

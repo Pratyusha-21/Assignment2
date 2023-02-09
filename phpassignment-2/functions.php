@@ -6,15 +6,17 @@
      * 
      */
     class CallApi {
-        // Stores all the data elements.
+        /**
+         *  Stores all the data elements.
+         */
         public $arr; 
 
         /**
-         * @var $client creates an object of GuzzleHTTP.
-         * @var $host stores the hostname. 
-         * @var $response stores response after making GET request.
-         * @var $body  
-         * @var $arr stores the response in array format.
+         *  $client creates an object of GuzzleHTTP.
+         *  $host stores the hostname. 
+         *  $response stores response after making GET request.
+         *  $body  
+         *  $arr stores the response in array format.
          */
         function __construct() {
             $client = new \GuzzleHttp\Client();                                    
@@ -40,6 +42,7 @@
          * Checks whether the field services are null or not.
          * 
          *   @param int $i data element that is being accessed.
+         * 
          *   @return boolean 
          *     if null then returns true.
          */
@@ -54,6 +57,7 @@
          * Takes the list items from the json file where field service is not null.
          * 
          *   @var int $i data element that is being accessed.
+         * 
          *   @return string
          *     the list from json file.
          */
@@ -65,6 +69,7 @@
          * Takes the image from the json file where field service is not null.
          * 
          *   @param int $i data element that is being accessed.
+         * 
          *   @return string 
          *      returns image.
          */
@@ -82,14 +87,13 @@
          * Takes the title from the json file where field service is not null. 
          *  
          *   @param int $i data element that is being accessed.
+         * 
          *   @return string
          *     the title from json file.  
          */
         function title(int $i) {
             return $this->arr['data'][$i]['attributes']['title'];
-             
         }
     }
 
 ?>
-
